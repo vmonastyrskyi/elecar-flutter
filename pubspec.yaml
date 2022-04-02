@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  flutter_native_splash: ^2.1.2+1
+
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -18,7 +21,6 @@ dev_dependencies:
     sdk: flutter
 
   flutter_launcher_icons: ^0.9.2
-
   flutter_lints: ^1.0.0
 
 flutter:
@@ -31,5 +33,11 @@ flutter:
 flutter_icons:
   image_path: assets/images/icon.png
   remove_alpha_ios: true
+  android: true
+  ios: true
+
+flutter_native_splash:
+  color: "#0A0A0B"
+  image: assets/images/splash.png
   android: true
   ios: true
