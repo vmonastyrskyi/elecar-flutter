@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+import 'components/screens/home/home_screen.dart';
+import 'resources_preloader.dart';
+
+void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-
+  await preloadResources();
   runApp(const ElecarApp());
 }
 
@@ -25,9 +28,10 @@ class _ElecarAppState extends State<ElecarApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Elecar',
-      home: Container(),
+      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
