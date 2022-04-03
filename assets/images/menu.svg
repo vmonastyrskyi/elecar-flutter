@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 13.33">
-    <path class="b" d="M0,0H15V1.67H0V0ZM0,5.83H15v1.67H0v-1.67Zm0,5.83H15v1.67H0v-1.67Z"
-        fill="#fff" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 13.33">
+    <path d="M0,0H15V1.67H0V0ZM0,5.83H15v1.67H0v-1.67Zm0,5.83H15v1.67H0v-1.67Z" fill="#fff" />
 </svg>
