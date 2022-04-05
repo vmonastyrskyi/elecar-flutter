@@ -36,6 +36,186 @@ class HomeScreen extends StatelessWidget {
                       physics: const BouncingScrollPhysics(),
                       child: Column(
                         children: [
+                          const Text(
+                            'Choose The Best Car',
+                            style: TextStyle(
+                              height: 1.4,
+                              fontSize: 24.0,
+                              fontFamily: 'Exo',
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 16.0),
+                          const Text(
+                            'Porsche Mission E',
+                            style: TextStyle(
+                              height: 1.4,
+                              fontSize: 16.0,
+                              fontFamily: 'Exo',
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 4.0),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SvgPicture.asset(
+                                AppResources.battery,
+                                color: AppColors.primaryColor,
+                              ),
+                              const SizedBox(width: 6.0),
+                              const Text(
+                                'Electric car',
+                                style: TextStyle(
+                                  height: 1.4,
+                                  fontSize: 13.0,
+                                  fontFamily: 'Exo',
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColors.textColor,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 48.0),
+                          Image.asset(
+                            AppResources.carHome,
+                            width: MediaQuery.of(context).size.width * 0.75,
+                          ),
+                          const SizedBox(height: 42.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Align(
+                                widthFactor: 0.0,
+                                alignment: Alignment.centerLeft,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: 25.0,
+                                      height: 25.0,
+                                      decoration: const BoxDecoration(
+                                        color: AppColors.containerColor,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Center(
+                                        child: SvgPicture.asset(
+                                            AppResources.temperature),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 12.0),
+                                    const Text(
+                                      '24°',
+                                      style: TextStyle(
+                                        height: 1.4,
+                                        fontSize: 20.0,
+                                        fontFamily: 'Exo',
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.white,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6.0),
+                                    const Text(
+                                      'TEMPERATURE',
+                                      style: TextStyle(
+                                        height: 1.4,
+                                        fontSize: 10.0,
+                                        fontFamily: 'Exo',
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.textColorLight,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Align(
+                                widthFactor: 0.0,
+                                alignment: Alignment.center,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: 25.0,
+                                      height: 25.0,
+                                      decoration: const BoxDecoration(
+                                        color: AppColors.containerColor,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Center(
+                                        child: SvgPicture.asset(
+                                            AppResources.mileage),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 12.0),
+                                    const Text(
+                                      '873',
+                                      style: TextStyle(
+                                        height: 1.4,
+                                        fontSize: 20.0,
+                                        fontFamily: 'Exo',
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.white,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6.0),
+                                    const Text(
+                                      'MILEAGE',
+                                      style: TextStyle(
+                                        height: 1.4,
+                                        fontSize: 10.0,
+                                        fontFamily: 'Exo',
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.textColorLight,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Align(
+                                widthFactor: 0.0,
+                                alignment: Alignment.centerRight,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      width: 25.0,
+                                      height: 25.0,
+                                      decoration: const BoxDecoration(
+                                        color: AppColors.containerColor,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Center(
+                                        child: SvgPicture.asset(
+                                            AppResources.battery),
+                                      ),
+                                    ),
+                                    const SizedBox(height: 12.0),
+                                    const Text(
+                                      '94%',
+                                      style: TextStyle(
+                                        height: 1.4,
+                                        fontSize: 20.0,
+                                        fontFamily: 'Exo',
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.white,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 6.0),
+                                    const Text(
+                                      'BATTERY',
+                                      style: TextStyle(
+                                        height: 1.4,
+                                        fontSize: 10.0,
+                                        fontFamily: 'Exo',
+                                        fontWeight: FontWeight.w500,
+                                        color: AppColors.textColorLight,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ).withPaddingSymmetric(32.0, 0.0),
+                          const SizedBox(height: 56.0),
                           const StartButton(),
                         ],
                       ),
