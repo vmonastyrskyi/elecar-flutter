@@ -1,9 +1,14 @@
 import 'dart:ui';
 
 import 'package:elecar/app_colors.dart';
+import 'package:elecar/app_resources.dart';
 import 'package:elecar/components/shared_widgets/elecar_app_bar.dart';
+import 'package:elecar/extensions/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'widgets/start_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,7 +26,7 @@ class HomeScreen extends StatelessWidget {
             body: Stack(
               children: [
                 CustomPaint(
-                  painter: BackgroundCirclesPainter(),
+                  painter: _BackgroundCirclesPainter(),
                   size: Size.infinite,
                 ),
                 SafeArea(
@@ -30,7 +35,9 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(0.0, 64.0, 0.0, 64.0),
                       physics: const BouncingScrollPhysics(),
                       child: Column(
-                        children: [],
+                        children: [
+                          const StartButton(),
+                        ],
                       ),
                     ),
                   ),
@@ -45,7 +52,7 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class BackgroundCirclesPainter extends CustomPainter {
+class _BackgroundCirclesPainter extends CustomPainter {
   final Paint _bigCirclePaint = Paint()
     ..color = const Color(0xFF374A6D).withOpacity(0.5)
     ..imageFilter = ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0);
@@ -71,7 +78,7 @@ class BackgroundCirclesPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant BackgroundCirclesPainter oldDelegate) {
+  bool shouldRepaint(covariant _BackgroundCirclesPainter oldDelegate) {
     return false;
   }
 }
