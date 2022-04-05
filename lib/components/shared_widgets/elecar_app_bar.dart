@@ -56,7 +56,7 @@ class ElecarAppBar extends StatelessWidget with PreferredSizeWidget {
             fontWeight: FontWeight.w500,
             color: AppColors.white,
           ),
-        )
+        ),
       ],
     );
   }
