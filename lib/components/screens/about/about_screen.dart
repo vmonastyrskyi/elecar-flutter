@@ -19,6 +19,8 @@ class AboutScreen extends StatelessWidget {
             _buildAboutImage(),
             const SizedBox(height: 96.0),
             const _Title(),
+            const SizedBox(height: 16.0),
+            const _Description(),
           ],
         ),
       ),
@@ -102,6 +104,24 @@ class _Title extends StatelessWidget {
         fontFamily: 'Exo',
         fontWeight: FontWeight.w600,
         color: AppColors.titleColor,
+      ),
+    );
+  }
+}
+
+class _Description extends StatelessWidget {
+  const _Description({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'See the future with high-performance electric cars produced by renowned brands. They feature futuristic builds and designs with new and innovative platforms that last a long time.',
+      style: TextStyle(
+        height: 1.4,
+        fontSize: 15.0,
+        fontFamily: 'Exo',
+        fontWeight: FontWeight.w400,
+        color: AppColors.textColor,
       ),
     );
   }
