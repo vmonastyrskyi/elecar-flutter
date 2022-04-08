@@ -11,6 +11,7 @@ Future<void> preloadResources() async {
     preloadSvg(AppResources.temperature),
     preloadSvg(AppResources.mileage),
     preloadSvg(AppResources.battery),
+    preloadSvg(AppResources.close),
   ]);
 
   await Future.wait([
