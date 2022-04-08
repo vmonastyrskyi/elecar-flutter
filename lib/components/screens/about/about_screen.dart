@@ -14,9 +14,11 @@ class AboutScreen extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(24.0, 56.0, 24.0, 56.0),
         physics: const BouncingScrollPhysics(),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _buildAboutImage(),
-            const SizedBox(height: 42.0),
+            const SizedBox(height: 96.0),
+            const _Title(),
           ],
         ),
       ),
@@ -83,6 +85,24 @@ class AboutScreen extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _Title extends StatelessWidget {
+  const _Title({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'Machines With\nFuture Technology',
+      style: TextStyle(
+        height: 1.4,
+        fontSize: 20.0,
+        fontFamily: 'Exo',
+        fontWeight: FontWeight.w600,
+        color: AppColors.titleColor,
+      ),
     );
   }
 }
