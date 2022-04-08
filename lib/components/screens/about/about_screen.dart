@@ -21,6 +21,11 @@ class AboutScreen extends StatelessWidget {
             const _Title(),
             const SizedBox(height: 16.0),
             const _Description(),
+            const SizedBox(height: 32.0),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: _buildKnowMoreButton(context),
+            ),
           ],
         ),
       ),
@@ -87,6 +92,29 @@ class AboutScreen extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildKnowMoreButton(BuildContext context) {
+    return GestureDetector(
+      onTap: Feedback.wrapForTap(() {}, context),
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(32.0, 16.0, 32.0, 16.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4.0),
+          color: AppColors.primaryColor,
+        ),
+        child: const Text(
+          'Know more',
+          style: TextStyle(
+            height: 1.4,
+            fontSize: 15.0,
+            fontFamily: 'Exo',
+            fontWeight: FontWeight.w500,
+            color: AppColors.white,
+          ),
+        ),
+      ),
     );
   }
 }
