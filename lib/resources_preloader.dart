@@ -15,6 +15,7 @@ Future<void> preloadResources() async {
   ]);
 
   await Future.wait([
-    preloadImage(const AssetImage(AppResources.carHome)),
+    preloadImage(const AssetImage(AppResources.home)),
+    preloadImage(const AssetImage(AppResources.about)),
   ]);
 }

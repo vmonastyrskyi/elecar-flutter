@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'about/about_screen.dart';
 import 'home/home_screen.dart';
 
 export 'package:elecar/extensions/navigator.dart';
 
 abstract class RootRoutes {
   static const String home = '/home';
+  static const String about = '/about';
 }
 
 class RootRouter {
@@ -14,6 +16,10 @@ class RootRouter {
       case RootRoutes.home:
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+        );
+      case RootRoutes.about:
+        return MaterialPageRoute(
+          builder: (_) => const AboutScreen(),
         );
       default:
         return MaterialPageRoute(

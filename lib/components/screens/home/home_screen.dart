@@ -101,7 +101,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildCarImage(BuildContext context) {
     return Image.asset(
-      AppResources.carHome,
+      AppResources.home,
       width: MediaQuery.of(context).size.width * 0.75,
     );
   }

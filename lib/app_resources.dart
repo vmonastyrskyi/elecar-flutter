@@ -6,5 +6,6 @@ abstract class AppResources {
   static const String battery = 'assets/images/battery.svg';
   static const String close = 'assets/images/close.svg';
 
-  static const String carHome = 'assets/images/car_home.png';
+  static const String home = 'assets/images/home.png';
+  static const String about = 'assets/images/about.png';
 }
