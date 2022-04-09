@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'components/screens/main_screen.dart';
+import 'extensions/sizer.dart';
 import 'resources_preloader.dart';
 
 void main() async {
@@ -26,6 +27,12 @@ class _ElecarAppState extends State<ElecarApp> {
     super.initState();
 
     FlutterNativeSplash.remove();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    ResponsiveLayout.setMediaQuery(context);
   }
 
   @override
