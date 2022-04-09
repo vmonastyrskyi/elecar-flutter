@@ -17,5 +17,10 @@ Future<void> preloadResources() async {
   await Future.wait([
     preloadImage(const AssetImage(AppResources.home)),
     preloadImage(const AssetImage(AppResources.about)),
+    preloadImage(const AssetImage(AppResources.popular1)),
+    preloadImage(const AssetImage(AppResources.popular2)),
+    preloadImage(const AssetImage(AppResources.popular3)),
+    preloadImage(const AssetImage(AppResources.popular4)),
+    preloadImage(const AssetImage(AppResources.popular5)),
   ]);
 }

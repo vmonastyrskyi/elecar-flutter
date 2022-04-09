@@ -8,4 +8,9 @@ abstract class AppResources {
 
   static const String home = 'assets/images/home.png';
   static const String about = 'assets/images/about.png';
+  static const String popular1 = 'assets/images/popular1.png';
+  static const String popular2 = 'assets/images/popular2.png';
+  static const String popular3 = 'assets/images/popular3.png';
+  static const String popular4 = 'assets/images/popular4.png';
+  static const String popular5 = 'assets/images/popular5.png';
 }
