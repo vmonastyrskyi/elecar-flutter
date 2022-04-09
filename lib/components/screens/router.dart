@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'about/about_screen.dart';
 import 'home/home_screen.dart';
+import 'popular/popular_screen.dart';
 
 export 'package:elecar/extensions/navigator.dart';
 
 abstract class RootRoutes {
   static const String home = '/home';
   static const String about = '/about';
+  static const String popular = '/popular';
 }
 
 class RootRouter {
@@ -20,6 +22,10 @@ class RootRouter {
       case RootRoutes.about:
         return MaterialPageRoute(
           builder: (_) => const AboutScreen(),
+        );
+      case RootRoutes.popular:
+        return MaterialPageRoute(
+          builder: (_) => const PopularScreen(),
         );
       default:
         return MaterialPageRoute(

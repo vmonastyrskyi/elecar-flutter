@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
                 body: Navigator(
                   key: rootNavigator,
                   onGenerateRoute: RootRouter.generateRoute,
-                  initialRoute: RootRoutes.about,
+                  initialRoute: RootRoutes.popular,
                 ),
                 extendBodyBehindAppBar: true,
               ),
