@@ -1,5 +1,7 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 import 'components/screens/main_screen.dart';
 import 'resources_preloader.dart';
@@ -10,7 +12,12 @@ void main() async {
 
   await preloadResources();
 
-  runApp(const ElecarApp());
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (_) => const ElecarApp(),
+    ),
+  );
 }
 
 class ElecarApp extends StatelessWidget {
@@ -18,7 +25,24 @@ class ElecarApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      builder: (context, child) {
+        return DevicePreview.appBuilder(
+          context,
+          ResponsiveWrapper.builder(
+            child,
+            minWidth: 414,
+            defaultScale: true,
+            breakpoints: [
+              const ResponsiveBreakpoint.resize(
+                480,
+                name: MOBILE,
+                scaleFactor: 1.25,
+              ),
+            ],
+          ),
+        );
+      },
       title: 'Elecar',
       home: MainScreen(),
       useInheritedMediaQuery: true,

@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  device_preview: ^1.0.0
+  responsive_framework: ^0.1.7
   flutter_native_splash: ^2.1.2+1
   flutter_svg: ^1.0.3
 
