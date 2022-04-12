@@ -48,7 +48,7 @@ class _MainScreenState extends State<MainScreen> {
                 body: Navigator(
                   key: rootNavigator,
                   onGenerateRoute: RootRouter.generateRoute,
-                  initialRoute: RootRoutes.popular,
+                  initialRoute: RootRoutes.moreFeatures,
                 ),
                 extendBodyBehindAppBar: true,
               ),

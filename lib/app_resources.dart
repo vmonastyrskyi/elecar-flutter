@@ -16,4 +16,6 @@ abstract class AppResources {
   static const String popular3 = 'assets/images/popular3.png';
   static const String popular4 = 'assets/images/popular4.png';
   static const String popular5 = 'assets/images/popular5.png';
+  static const String map = 'assets/images/map.png';
+  static const String features = 'assets/images/features.png';
 }

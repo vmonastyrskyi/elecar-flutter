@@ -31,11 +31,11 @@ class ElecarApp extends StatelessWidget {
           context,
           ResponsiveWrapper.builder(
             child,
-            minWidth: 414,
+            minWidth: 414.0,
             defaultScale: true,
             breakpoints: [
               const ResponsiveBreakpoint.resize(
-                480,
+                480.0,
                 name: MOBILE,
                 scaleFactor: 1.25,
               ),
@@ -44,7 +44,7 @@ class ElecarApp extends StatelessWidget {
         );
       },
       title: 'Elecar',
-      home: MainScreen(),
+      home: const MainScreen(),
       useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
     );
