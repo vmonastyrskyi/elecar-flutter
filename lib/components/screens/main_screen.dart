@@ -1,17 +1,37 @@
 import 'package:elecar/app_colors.dart';
+import 'package:elecar/extensions/sizer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-import 'widgets/elecar_app_bar.dart';
-import 'widgets/navigation_menu.dart';
 import 'router.dart';
+import 'widgets/elecar_app_bar.dart';
 
 export 'router.dart';
 
 final GlobalKey<NavigatorState> rootNavigator = GlobalKey();
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    FlutterNativeSplash.remove();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    ResponsiveLayout.setMediaQuery(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +52,6 @@ class MainScreen extends StatelessWidget {
                 ),
                 extendBodyBehindAppBar: true,
               ),
-              // const NavigationMenu(),
             ],
           ),
         ),

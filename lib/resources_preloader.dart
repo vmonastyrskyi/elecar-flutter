@@ -12,6 +12,9 @@ Future<void> preloadResources() async {
     preloadSvg(AppResources.mileage),
     preloadSvg(AppResources.battery),
     preloadSvg(AppResources.close),
+    preloadSvg(AppResources.purchase),
+    preloadSvg(AppResources.speed),
+    preloadSvg(AppResources.fuel),
   ]);
 
   await Future.wait([
