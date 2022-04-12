@@ -79,7 +79,9 @@ class PageIndicatorState extends State<PageIndicator> {
           width: _indicatorWidth * scale,
           height: _indicatorHeight * scale,
           decoration: BoxDecoration(
-            color: selected ? AppColors.primaryColor : AppColors.white,
+            color: selected
+                ? AppColors.primaryColor
+                : AppColors.textColor.withOpacity(0.2),
             shape: BoxShape.circle,
           ),
         ),
