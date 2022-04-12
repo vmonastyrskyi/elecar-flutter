@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:elecar/app_colors.dart';
 import 'package:elecar/app_resources.dart';
+import 'package:elecar/components/screens/bloc/navigation_menu_bloc.dart';
 import 'package:flutter/material.dart';
 
 class AboutScreen extends StatelessWidget {
@@ -95,7 +96,10 @@ class AboutScreen extends StatelessWidget {
 
   Widget _buildKnowMoreButton(BuildContext context) {
     return GestureDetector(
-      onTap: Feedback.wrapForTap(() {}, context),
+      onTap: Feedback.wrapForTap(
+        () => context.navigationMenuBloc.jumpToPage(NavigationMenuPage.home),
+        context,
+      ),
       child: Container(
         padding: const EdgeInsets.fromLTRB(32.0, 16.0, 32.0, 16.0),
         decoration: BoxDecoration(

@@ -1,4 +1,5 @@
 import 'package:elecar/app_colors.dart';
+import 'package:elecar/components/screens/bloc/navigation_menu_bloc.dart';
 import 'package:flutter/material.dart';
 
 class StartButton extends StatefulWidget {
@@ -37,41 +38,47 @@ class _StartButtonState extends State<StartButton>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 90.0,
-      height: 90.0,
-      padding: const EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(
-          color: const Color(0xFF02DB8A),
-          width: 2.0,
-        ),
-        boxShadow: [
-          BoxShadow(
-            blurRadius: 16.0 * _spreadRadius.value,
-            blurStyle: BlurStyle.outer,
-            color: const Color(0xFF02DB8A),
-          )
-        ],
+    return GestureDetector(
+      onTap: Feedback.wrapForTap(
+        () => context.navigationMenuBloc.jumpToPage(NavigationMenuPage.about),
+        context,
       ),
       child: Container(
+        width: 90.0,
+        height: 90.0,
+        padding: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: const Color(0xFF099260),
+            color: const Color(0xFF02DB8A),
             width: 2.0,
           ),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 16.0 * _spreadRadius.value,
+              blurStyle: BlurStyle.outer,
+              color: const Color(0xFF02DB8A),
+            )
+          ],
         ),
-        child: const Center(
-          child: Text(
-            'START',
-            style: TextStyle(
-              height: 1.4,
-              fontSize: 13.0,
-              fontFamily: 'Exo',
-              fontWeight: FontWeight.w500,
-              color: AppColors.white,
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: const Color(0xFF099260),
+              width: 2.0,
+            ),
+          ),
+          child: const Center(
+            child: Text(
+              'START',
+              style: TextStyle(
+                height: 1.4,
+                fontSize: 13.0,
+                fontFamily: 'Exo',
+                fontWeight: FontWeight.w500,
+                color: AppColors.white,
+              ),
             ),
           ),
         ),

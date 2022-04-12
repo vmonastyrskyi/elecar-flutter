@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:elecar/app_colors.dart';
 import 'package:elecar/app_resources.dart';
+import 'package:elecar/components/screens/bloc/navigation_menu_bloc.dart';
 import 'package:elecar/components/shared_widgets/separated_column.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,19 +35,31 @@ class NavigationMenu extends StatelessWidget {
                     separator: const SizedBox(height: 32.0),
                     children: [
                       _NavigationMenuButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.navigationMenuBloc
+                              .jumpToPage(NavigationMenuPage.home);
+                        },
                         text: 'Home',
                       ),
                       _NavigationMenuButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.navigationMenuBloc
+                              .jumpToPage(NavigationMenuPage.about);
+                        },
                         text: 'About',
                       ),
                       _NavigationMenuButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.navigationMenuBloc
+                              .jumpToPage(NavigationMenuPage.popular);
+                        },
                         text: 'Popular',
                       ),
                       _NavigationMenuButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.navigationMenuBloc
+                              .jumpToPage(NavigationMenuPage.featured);
+                        },
                         text: 'Featured',
                       ),
                     ],
@@ -63,7 +76,7 @@ class NavigationMenu extends StatelessWidget {
   Widget _buildCloseButton(BuildContext context) {
     return GestureDetector(
       onTap: Feedback.wrapForTap(
-        () {},
+        context.navigationMenuBloc.closeNavigationMenu,
         context,
       ),
       child: SvgPicture.asset(AppResources.close),

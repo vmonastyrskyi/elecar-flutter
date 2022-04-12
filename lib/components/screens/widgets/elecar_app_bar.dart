@@ -1,5 +1,6 @@
 import 'package:elecar/app_colors.dart';
 import 'package:elecar/app_resources.dart';
+import 'package:elecar/components/screens/bloc/navigation_menu_bloc.dart';
 import 'package:elecar/extensions/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -24,7 +25,7 @@ class ElecarAppBar extends StatelessWidget with PreferredSizeWidget {
             height: 32.0,
             child: GestureDetector(
               onTap: Feedback.wrapForTap(
-                () {},
+                context.navigationMenuBloc.openNavigationMenu,
                 context,
               ),
               child: Center(
