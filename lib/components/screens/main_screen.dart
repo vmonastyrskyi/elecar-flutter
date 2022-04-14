@@ -10,6 +10,7 @@ import 'bloc/navigation_menu_bloc.dart';
 import 'home/home_screen.dart';
 import 'more_features/more_features_screen.dart';
 import 'popular/popular_screen.dart';
+import 'offer/offer_screen.dart';
 import 'widgets/elecar_app_bar.dart';
 import 'widgets/navigation_menu.dart';
 
@@ -53,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
                     _pageController.animateToPage(
                       state.currentPageIndex,
                       duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeInOutQuart,
+                      curve: Curves.easeInOutQuint,
                     );
                   },
                   child: Scaffold(
@@ -68,6 +69,7 @@ class _MainScreenState extends State<MainScreen> {
                         AboutScreen(),
                         PopularScreen(),
                         MoreFeaturesScreen(),
+                        OfferScreen(),
                       ],
                     ),
                     extendBodyBehindAppBar: true,

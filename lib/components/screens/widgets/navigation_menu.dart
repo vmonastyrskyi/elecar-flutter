@@ -62,6 +62,13 @@ class NavigationMenu extends StatelessWidget {
                         },
                         text: 'Featured',
                       ),
+                      _NavigationMenuButton(
+                        onPressed: () {
+                          context.navigationMenuBloc
+                              .jumpToPage(NavigationMenuPage.subscribe);
+                        },
+                        text: 'Subscription',
+                      ),
                     ],
                   ),
                 ),

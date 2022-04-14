@@ -5,6 +5,7 @@ enum NavigationMenuPage {
   about,
   popular,
   featured,
+  subscribe,
 }
 
 class NavigationMenuState extends Equatable {
@@ -49,6 +50,8 @@ extension NavigationExtension on NavigationMenuPage {
         return 2;
       case NavigationMenuPage.featured:
         return 3;
+      case NavigationMenuPage.subscribe:
+        return 4;
     }
   }
 }

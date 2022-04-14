@@ -27,5 +27,7 @@ Future<void> preloadResources() async {
     preloadImage(const AssetImage(AppResources.popular5)),
     preloadImage(const AssetImage(AppResources.map)),
     preloadImage(const AssetImage(AppResources.features)),
+    preloadImage(const AssetImage(AppResources.offerBackground)),
+    preloadImage(const AssetImage(AppResources.offer)),
   ]);
 }
