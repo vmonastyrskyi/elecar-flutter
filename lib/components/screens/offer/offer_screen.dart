@@ -44,9 +44,9 @@ class OfferScreen extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   child: Image.asset(
                     AppResources.offer,
-                    fit: BoxFit.fitHeight,
                     height: 240.0,
-                    alignment: Alignment(-1, 0.0),
+                    fit: BoxFit.fitHeight,
+                    alignment: const Alignment(-1.5, 0.0),
                   ).withPadding(0.0, 0.0, 0.0, 56.0),
                 ),
               ),

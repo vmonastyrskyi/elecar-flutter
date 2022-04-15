@@ -8,12 +8,12 @@ abstract class NavigationMenuEvent extends Equatable {
 }
 
 class JumpToPage extends NavigationMenuEvent {
-  const JumpToPage(this.pageIndex);
+  const JumpToPage(this.navigationMenuPage);
 
-  final int pageIndex;
+  final NavigationMenuPage navigationMenuPage;
 
   @override
-  List<Object> get props => [pageIndex];
+  List<Object> get props => [navigationMenuPage];
 }
 
 class ShowNavigationMenu extends NavigationMenuEvent {

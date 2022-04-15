@@ -1,57 +1,41 @@
 part of 'navigation_menu_bloc.dart';
 
-enum NavigationMenuPage {
-  home,
-  about,
-  popular,
-  featured,
-  subscribe,
-}
-
 class NavigationMenuState extends Equatable {
   const NavigationMenuState._({
-    required this.currentPageIndex,
     required this.showNavigationMenu,
+    required this.pages,
+    required this.selectedNavigationPage,
   });
 
-  const NavigationMenuState.initial()
-      : this._(
-          currentPageIndex: 0,
+  const NavigationMenuState.initial({
+    required List<NavigationPage> pages,
+    required NavigationPage selectedNavigationPage,
+  }) : this._(
           showNavigationMenu: false,
+          pages: pages,
+          selectedNavigationPage: selectedNavigationPage,
         );
 
-  final int currentPageIndex;
   final bool showNavigationMenu;
+  final List<NavigationPage> pages;
+  final NavigationPage selectedNavigationPage;
 
   NavigationMenuState copyWith({
     int? currentPageIndex,
     bool? showNavigationMenu,
+    NavigationPage? selectedNavigationPage,
   }) =>
       NavigationMenuState._(
-        currentPageIndex: currentPageIndex ?? this.currentPageIndex,
         showNavigationMenu: showNavigationMenu ?? this.showNavigationMenu,
+        selectedNavigationPage:
+            selectedNavigationPage ?? this.selectedNavigationPage,
+        pages: pages,
       );
 
   @override
   List<Object> get props => [
-        currentPageIndex,
         showNavigationMenu,
+        pages,
+        selectedNavigationPage,
       ];
-}
-
-extension NavigationExtension on NavigationMenuPage {
-  int get value {
-    switch (this) {
-      case NavigationMenuPage.home:
-        return 0;
-      case NavigationMenuPage.about:
-        return 1;
-      case NavigationMenuPage.popular:
-        return 2;
-      case NavigationMenuPage.featured:
-        return 3;
-      case NavigationMenuPage.subscribe:
-        return 4;
-    }
-  }
 }

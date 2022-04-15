@@ -5,6 +5,7 @@ import 'package:elecar/app_resources.dart';
 import 'package:elecar/components/screens/bloc/navigation_menu_bloc.dart';
 import 'package:elecar/components/shared_widgets/separated_column.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class NavigationMenu extends StatelessWidget {
@@ -30,46 +31,23 @@ class NavigationMenu extends StatelessWidget {
                 ),
                 Align(
                   alignment: const Alignment(0.0, -0.5),
-                  child: SeparatedColumn(
-                    mainAxisSize: MainAxisSize.min,
-                    separator: const SizedBox(height: 32.0),
-                    children: [
-                      _NavigationMenuButton(
-                        onPressed: () {
-                          context.navigationMenuBloc
-                              .jumpToPage(NavigationMenuPage.home);
-                        },
-                        text: 'Home',
-                      ),
-                      _NavigationMenuButton(
-                        onPressed: () {
-                          context.navigationMenuBloc
-                              .jumpToPage(NavigationMenuPage.about);
-                        },
-                        text: 'About',
-                      ),
-                      _NavigationMenuButton(
-                        onPressed: () {
-                          context.navigationMenuBloc
-                              .jumpToPage(NavigationMenuPage.popular);
-                        },
-                        text: 'Popular',
-                      ),
-                      _NavigationMenuButton(
-                        onPressed: () {
-                          context.navigationMenuBloc
-                              .jumpToPage(NavigationMenuPage.featured);
-                        },
-                        text: 'Featured',
-                      ),
-                      _NavigationMenuButton(
-                        onPressed: () {
-                          context.navigationMenuBloc
-                              .jumpToPage(NavigationMenuPage.subscribe);
-                        },
-                        text: 'Subscription',
-                      ),
-                    ],
+                  child: BlocBuilder<NavigationMenuBloc, NavigationMenuState>(
+                    builder: (context, state) {
+                      return SeparatedColumn(
+                        mainAxisSize: MainAxisSize.min,
+                        separator: const SizedBox(height: 32.0),
+                        children: [
+                          for (final page in state.pages)
+                            _NavigationMenuButton(
+                              onPressed: () {
+                                context.navigationMenuBloc
+                                    .jumpToPage(page.navigationMenuPage);
+                              },
+                              text: page.name,
+                            ),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ],
@@ -107,12 +85,15 @@ class _NavigationMenuButton extends StatelessWidget {
       onTap: Feedback.wrapForTap(onPressed, context),
       child: Text(
         text.toUpperCase(),
-        style: const TextStyle(
+        style: TextStyle(
           height: 1.4,
           fontSize: 20.0,
           fontFamily: 'Exo',
           fontWeight: FontWeight.w600,
-          color: AppColors.white,
+          color: context.navigationMenuBloc.state.selectedNavigationPage.name ==
+                  text
+              ? AppColors.primaryColor
+              : AppColors.white,
         ),
       ),
     );
